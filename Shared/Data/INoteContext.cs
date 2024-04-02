@@ -1,5 +1,4 @@
-﻿using MongoDB.Driver;
-using Notepad.API.Features.Notepad;
+﻿using Notepad.API.Features.Notepad;
 
 namespace Notepad.API.Shared.Data;
 

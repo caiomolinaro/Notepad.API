@@ -25,4 +25,21 @@ internal sealed class NoteData : INoteData
     {
         return await _context.Notes.Find(note => note.Id == id).FirstOrDefaultAsync(cancellationToken);
     }
+
+    public async Task<bool> DeleteNoteAsync(Guid id, CancellationToken cancellationToken)
+    {
+        FilterDefinition<NoteEntity> filter = Builders<NoteEntity>.Filter.Eq(note => note.Id, id);
+        DeleteResult deleteResult = await _context.Notes.DeleteOneAsync(filter, cancellationToken);
+
+        return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;
+    }
+
+    public async Task<bool> UpdateNoteAsync(NoteEntity note, CancellationToken cancellationToken)
+    {
+        FilterDefinition<NoteEntity> filter = Builders<NoteEntity>.Filter.Eq(n => n.Id, note.Id);
+        var updateOptions = new ReplaceOptions();
+        var updateResult = await _context.Notes.ReplaceOneAsync(filter, note, updateOptions, cancellationToken);
+
+        return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
+    }
 }

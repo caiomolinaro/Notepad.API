@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-using Notepad.API.Shared.Models;
+﻿using Notepad.API.Shared.Models;
 
 namespace Notepad.API.Features.Notepad.Create;
 
@@ -18,9 +17,9 @@ internal sealed class CreateHandler(INoteData noteData, IValidator<CreateCommand
         var entity = new NoteEntity
         {
             Id = Guid.NewGuid(),
-            Title = request.Title,
+            Title = request.Title!,
             CreationDate = DateTime.UtcNow,
-            Body = request.Body
+            Body = request.Body!
         };
 
         await noteData.CreateNoteAsync(entity, cancellationToken);

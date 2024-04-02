@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Notepad.API.Features.Notepad.Create;
+﻿namespace Notepad.API.Features.Notepad.Create;
 
 public sealed class CreateValidator : AbstractValidator<CreateCommand>
 {

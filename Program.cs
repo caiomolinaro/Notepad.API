@@ -1,7 +1,6 @@
-using FluentValidation;
 using Notepad.API.DependencyInjection;
-using Notepad.API.Features.Notepad.Create;
 using Notepad.API.Shared.Data;
+using Notepad.API.Shared.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,12 +9,28 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Logging.ClearProviders();
+
 builder.Services.AddCarter();
 
-builder.Services.InitializeApplicationDependencies();
+builder.Services.AddSingleton<INoteContext, NoteContext>();
 
 builder.Services.AddMediatR(configuration =>
     configuration.RegisterServicesFromAssembly(typeof(Program).Assembly));
+
+builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingPipelineBehavior<,>));
+
+builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
+
+builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.InitializeApplicationDependencies();
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
@@ -28,6 +43,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<GlobalExceptionHandler>();
 app.MapCarter();
 
 app.Run();
