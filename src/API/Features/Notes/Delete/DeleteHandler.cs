@@ -1,6 +1,6 @@
 ﻿using Notepad.API.Shared.Models;
 
-namespace Notepad.API.Features.Notepad.Delete;
+namespace Notepad.API.Features.Notes.Delete;
 
 internal sealed class DeleteHandler(INoteData noteData, IValidator<DeleteCommand> validator) : IRequestHandler<DeleteCommand, Result<Guid>>
 {

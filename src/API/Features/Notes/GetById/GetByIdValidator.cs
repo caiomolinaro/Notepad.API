@@ -1,4 +1,4 @@
-﻿namespace Notepad.API.Features.Notepad.GetById;
+﻿namespace Notepad.API.Features.Notes.GetById;
 
 public sealed class GetByIdValidator : AbstractValidator<GetByIdQuery>
 {

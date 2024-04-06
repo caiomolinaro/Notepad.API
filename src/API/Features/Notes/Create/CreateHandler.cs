@@ -1,6 +1,6 @@
 ﻿using Notepad.API.Shared.Models;
 
-namespace Notepad.API.Features.Notepad.Create;
+namespace Notepad.API.Features.Notes.Create;
 
 internal sealed class CreateHandler(INoteData noteData, IValidator<CreateCommand> validator) : IRequestHandler<CreateCommand, Result<Guid>>
 {

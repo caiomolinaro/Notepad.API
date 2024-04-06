@@ -1,6 +1,6 @@
 ﻿using Notepad.API.Shared.Models;
 
-namespace Notepad.API.Features.Notepad.Update;
+namespace Notepad.API.Features.Notes.Update;
 
 public class UpdateCommand : IRequest<Result<Guid>>
 {

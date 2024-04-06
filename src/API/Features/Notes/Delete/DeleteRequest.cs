@@ -1,4 +1,4 @@
-﻿namespace Notepad.API.Features.Notepad.Delete;
+﻿namespace Notepad.API.Features.Notes.Delete;
 
 public sealed class DeleteRequest
 {

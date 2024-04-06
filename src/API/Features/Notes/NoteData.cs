@@ -1,6 +1,6 @@
 ﻿using Notepad.API.Shared.Data;
 
-namespace Notepad.API.Features.Notepad;
+namespace Notepad.API.Features.Notes;
 
 internal sealed class NoteData : INoteData
 {

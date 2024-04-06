@@ -1,6 +1,6 @@
 ﻿using Notepad.API.Shared.Models;
 
-namespace Notepad.API.Features.Notepad;
+namespace Notepad.API.Features.Notes;
 
 internal static class Errors
 {

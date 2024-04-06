@@ -1,4 +1,4 @@
-﻿namespace Notepad.API.Features.Notepad;
+﻿namespace Notepad.API.Features.Notes;
 
 internal interface INoteData
 {

@@ -1,8 +1,9 @@
-﻿using Notepad.API.Features.Notepad.Create;
-using Notepad.API.Features.Notepad.Delete;
-using Notepad.API.Features.Notepad.GetAll;
-using Notepad.API.Features.Notepad.GetById;
-using Notepad.API.Features.Notepad.Update;
+﻿using Notepad.API.Features.Notes;
+using Notepad.API.Features.Notes.Create;
+using Notepad.API.Features.Notes.Delete;
+using Notepad.API.Features.Notes.GetAll;
+using Notepad.API.Features.Notes.GetById;
+using Notepad.API.Features.Notes.Update;
 using Notepad.API.Shared.Models;
 
 namespace Notepad.API.Features.Notepad;

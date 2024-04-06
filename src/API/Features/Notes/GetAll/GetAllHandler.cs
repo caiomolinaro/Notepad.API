@@ -1,6 +1,6 @@
 ﻿using Notepad.API.Shared.Models;
 
-namespace Notepad.API.Features.Notepad.GetAll;
+namespace Notepad.API.Features.Notes.GetAll;
 
 internal sealed class GetAllHandler(INoteData noteData) : IRequestHandler<GetAllQuery, Result<IEnumerable<NoteEntity>>>
 {

@@ -1,4 +1,4 @@
-﻿using Notepad.API.Features.Notepad;
+﻿using Notepad.API.Features.Notes;
 
 namespace Notepad.API.DependencyInjection;
 

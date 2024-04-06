@@ -1,4 +1,4 @@
-﻿namespace Notepad.API.Features.Notepad.Create;
+﻿namespace Notepad.API.Features.Notes.Create;
 
 public sealed class CreateValidator : AbstractValidator<CreateCommand>
 {

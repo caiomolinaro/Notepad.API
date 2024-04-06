@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Notepad.API.Features.Notepad;
+namespace Notepad.API.Features.Notes;
 
 public class NoteEntity
 {

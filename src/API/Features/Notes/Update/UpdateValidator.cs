@@ -1,4 +1,4 @@
-﻿namespace Notepad.API.Features.Notepad.Update;
+﻿namespace Notepad.API.Features.Notes.Update;
 
 public sealed class UpdateValidator : AbstractValidator<UpdateCommand>
 {
