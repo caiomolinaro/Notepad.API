@@ -10,7 +10,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Logging.ClearProviders();
-
 builder.Services.AddCarter();
 
 builder.Services.AddSingleton<INoteContext, NoteContext>();
