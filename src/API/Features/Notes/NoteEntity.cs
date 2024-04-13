@@ -10,11 +10,11 @@ public class NoteEntity
     public Guid Id { get; set; }
 
     [BsonElement("Title")]
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     [BsonElement("Creation_Date")]
     public DateTime CreationDate { get; set; }
 
     [BsonElement("Body")]
-    public string Body { get; set; }
+    public string? Body { get; set; }
 }
